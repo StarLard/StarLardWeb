@@ -20,11 +20,13 @@ StarLardWeb is a static website, built using [Jekyll](https://jekyllrb.com). The
 
 ## Contributing
 
+This site uses the Minimal Mistakes Jekyll theme. See the [documentation](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/) for detailed configuration options.
+
 ### Pages
 
-Create pages in the `_pages` directory.
+Create pages in the `_pages` directory and add paths for any new pages in `_data/navigation.yml`.
 
-Pages shoudld contain the a [Front Matter](https://jekyllrb.com/docs/front-matter/) header like the following at the top of the file:
+Pages shoudld contain a [Front Matter](https://jekyllrb.com/docs/front-matter/) header like the following at the top of the file:
 ```
 ---
 layout: <layout>
@@ -32,6 +34,7 @@ title: About
 permalink: /about/
 ---
 ```
+Layout options are described [here](https://mmistakes.github.io/minimal-mistakes/docs/layouts/).
 
 ### Posts
 
@@ -49,7 +52,8 @@ Posts shoudld contain the a [Front Matter](https://jekyllrb.com/docs/front-matte
 layout: <layout>
 title:  "Welcome to Jekyll!"
 date:   2025-02-03 16:05:45 -0800
-categories: <space seperated list of tags>
+categories: <space seperated list of categories>
+tags: swift <space seperated list of tags>
 ---
 ```
 
@@ -61,6 +65,10 @@ Jekyll offers support for code snippets:
 print("Hello World!")
 {% endhighlight %}
 ```
+
+### Images
+
+Put images in `assets/images`
 
 ## Technical Design
 

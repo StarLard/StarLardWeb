@@ -2,7 +2,8 @@
 layout: single
 title:  "Authenticating Users with Blizzard on iOS"
 date:   2021-09-30 16:05:45 -0800
-categories: swift ios blizzard security privacy
+categories: iOS
+tags: swift ios blizzard security privacy gaming apple
 ---
 When I initially developed Hearth Keeper, I asked users to create an account with me or use social logins. While this worked and was certainly an acceptable approach, it required me to ask for personal information from my users, like their email, which I had no need of other than for the sake of creating an account. Soon after, I discovered the [Blizzard APIs](https://dev.battle.net/). Using their OAuth APIs, I could authenticate users for my service without asking for any personal information from users and without requiring them to create another yet account. Using Blizzard’s own services also served as reassurance to my users that Blizzard was aware of my service and everything I was doing was within their terms of service. While there was no official Hearthstone API at the time, Blizzard introduced [one](https://develop.battle.net/documentation/hearthstone) some time later and having users pre-authenticated through Blizzard allowed me to jump straight in, eventually leading me to write [HearthstoneKit](https://github.com/StarLard/HearthstoneKit).
 
