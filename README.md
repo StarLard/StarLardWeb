@@ -22,12 +22,12 @@ StarLardWeb is a static website, built using [Jekyll](https://jekyllrb.com). The
 
 ### Pages
 
-Create pages in the `pages` directory.
+Create pages in the `_pages` directory.
 
 Pages shoudld contain the a [Front Matter](https://jekyllrb.com/docs/front-matter/) header like the following at the top of the file:
 ```
 ---
-layout: page
+layout: <layout>
 title: About
 permalink: /about/
 ---
@@ -46,10 +46,10 @@ Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit number
 Posts shoudld contain the a [Front Matter](https://jekyllrb.com/docs/front-matter/) header like the following at the top of the file:
 ```
 ---
-layout: post
+layout: <layout>
 title:  "Welcome to Jekyll!"
 date:   2025-02-03 16:05:45 -0800
-categories: jekyll update
+categories: <space seperated list of tags>
 ---
 ```
 
