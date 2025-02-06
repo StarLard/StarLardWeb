@@ -15,8 +15,19 @@ StarLardWeb is a static website, built using [Jekyll](https://jekyllrb.com). The
 
 ## Serve
 
+### Jekyll
 1. [Serve](https://jekyllrb.com/tutorials/using-jekyll-with-bundler/#serve-the-site) the site with `bundle exec jekyll serve`
-2. Visit the site locally at http://127.0.0.1:4000/
+2. Visit the site locally at http://127.0.0.1:4000/ (or whatever address is printed in the console)
+
+### Firebase
+If you have the [Firebase CLI](https://firebase.google.com/docs/cli#install_the_firebase_cli) installed, you an also serve the site with firebase.
+1. Build the site with `bundle exec jekyll build`
+2. Serve the site with `firebase emulators:start --only hosting:starlarddev`
+2. Visit the site locally at 127.0.0.1:5002 (or whatever address is printed in the console)
+
+## Deploy
+
+Deployment is managed automatically upon merging to main via GitHub actions.
 
 ## Contributing
 
