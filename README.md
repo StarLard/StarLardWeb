@@ -84,3 +84,11 @@ Put images in `assets/images`
 ## Technical Design
 
 This site initially existed as a React app, which was initially chosen to serve as a learning mechanism for JS, but that proved burdensome to maintain and was overkill for the website's actual requirements given I had no dynamic content. Being an iOS developer, I investigated using Swift-based solutions, such as [Publish](https://github.com/JohnSundell/Publish) and [Vapor](https://github.com/vapor/vapor), but found that doing so recreated the issues I was having with React: I wanted something lightweight and easy to maintain so that I could spend more time working on projects that interest me; not maintaing a website. Hence, Jekyll was chosen due to its broad popularity, community support, and development velocity. Currently, it is hosted using using [Firebase Hosting](https://firebase.google.com/docs/hosting), since they offer free hosting and great performance for my use case.
+
+# Credits
+
+[Jekyll](https://github.com/jekyll/jekyll)
+
+# License
+
+All source code and content contained here-in are copyright of Caleb Friden, provided for demonstration purposes only, and and not intended for distribution. 
