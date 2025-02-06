@@ -91,4 +91,4 @@ This site initially existed as a React app, which was initially chosen to serve 
 
 # License
 
-All source code and content contained here-in are copyright of Caleb Friden, provided for demonstration purposes only, and and not intended for distribution. 
+All source code and content contained here-in are copyright of Caleb Friden, provided for demonstration purposes only, and not intended for distribution. 
