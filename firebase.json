@@ -1,7 +1,7 @@
 {
   "hosting": {
     "public": "_site",
-    "target": "main",
+    "target": "starlarddev",
     "ignore": [
       "firebase.json",
       "**/.*",

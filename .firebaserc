@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "dev-starlard-lard-lad"
-  }
+  },
+  "targets": {
+    "dev-starlard-lard-lad": {
+      "hosting": {
+        "starlarddev": [
+          "dev-starlard-lard-lad"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
