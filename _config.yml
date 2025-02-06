@@ -193,6 +193,10 @@ exclude:
   - tmp
   - /docs # ignore Minimal Mistakes /docs
   - /test # ignore Minimal Mistakes /test
+  - firebase.json
+  - .firebaserc
+  - .github
+  
 keep_files:
   - .git
   - .svn
