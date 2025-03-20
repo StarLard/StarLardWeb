@@ -29,6 +29,10 @@ If you have the [Firebase CLI](https://firebase.google.com/docs/cli#install_the_
 
 Deployment is managed automatically upon merging to main via GitHub actions.
 
+### Manual deploy
+
+When required, deployment can also be done locally by running `firebase deploy --only hosting --project dev-starlard-lard-lad`.
+
 ## Contributing
 
 This site uses the Minimal Mistakes Jekyll theme. See the [documentation](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/) for detailed configuration options.
