@@ -1,6 +1,6 @@
 main:
-  - title: "Apps"
-    url: /apps/
+  - title: "My Apps"
+    url: /portfolio/
   - title: "Posts"
     url: /posts/
 
