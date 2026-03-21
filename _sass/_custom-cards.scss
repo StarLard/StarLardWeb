@@ -1,0 +1,203 @@
+/* ==========================================================================
+   Portfolio Cards with Hover Effects
+   ========================================================================== */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @media (min-width: $medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.portfolio-card {
+  background: $card-background;
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: $card-shadow;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  border: 1px solid $border-color;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $card-shadow-hover;
+    background: $card-hover-background;
+
+    .portfolio-card__image img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-card__overlay {
+      opacity: 1;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
+
+  &__image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background: $background-color;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 48px;
+    height: 48px;
+    border-radius: $border-radius-sm;
+    overflow: hidden;
+    box-shadow: $card-shadow;
+    background: $card-background;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    padding: 1.5rem;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: $text-color;
+  }
+
+  &__excerpt {
+    font-size: 0.9rem;
+    color: $muted-text-color;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: $muted-text-color;
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+
+      i {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+// Posts Grid (similar style for recent posts)
+.posts-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.post-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: $card-background;
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $card-hover-background;
+    border-color: rgba($primary-color, 0.3);
+    transform: translateX(8px);
+  }
+
+  &__date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    padding: 0.75rem;
+    background: rgba($primary-color, 0.1);
+    border-radius: $border-radius-sm;
+    color: $primary-color;
+  }
+
+  &__day {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__month {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__excerpt {
+    font-size: 0.9rem;
+    color: $muted-text-color;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  &__meta {
+    font-size: 0.8rem;
+    color: $muted-text-color;
+
+    i {
+      margin-right: 0.25rem;
+      color: $primary-color;
+    }
+  }
+}

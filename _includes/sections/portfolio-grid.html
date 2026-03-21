@@ -1,0 +1,14 @@
+<section id="portfolio" class="section section--portfolio">
+  <div class="section__content">
+    <div class="section__header">
+      <h2>My Apps</h2>
+      <p>A collection of iOS applications built with care</p>
+    </div>
+    <div class="portfolio-grid">
+      {% assign sorted_portfolio = site.portfolio | sort: 'date' | reverse %}
+      {% for item in sorted_portfolio %}
+        {% include portfolio-card.html post=item %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

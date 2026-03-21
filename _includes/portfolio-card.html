@@ -1,0 +1,29 @@
+{% assign item = include.post %}
+
+<article class="portfolio-card animate-on-scroll">
+  <a href="{{ item.url | relative_url }}" class="portfolio-card__link" aria-label="{{ item.title }}"></a>
+
+  <div class="portfolio-card__image">
+    {% if item.header.teaser %}
+      <img src="{{ item.header.teaser | relative_url }}" alt="{{ item.title }}" loading="lazy">
+    {% elsif item.header.image %}
+      <img src="{{ item.header.image | relative_url }}" alt="{{ item.title }}" loading="lazy">
+    {% endif %}
+    <div class="portfolio-card__overlay"></div>
+    {% if item.sidebar[0].image %}
+      <div class="portfolio-card__icon">
+        <img src="{{ item.sidebar[0].image | relative_url }}" alt="{{ item.title }} icon" loading="lazy">
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="portfolio-card__content">
+    <h3 class="portfolio-card__title">{{ item.title }}</h3>
+    <p class="portfolio-card__excerpt">{{ item.excerpt | strip_html | truncate: 120 }}</p>
+    <div class="portfolio-card__meta">
+      {% if item.sidebar[0].text %}
+        <span><i class="fas fa-mobile-alt"></i> {{ item.sidebar[0].text }}</span>
+      {% endif %}
+    </div>
+  </div>
+</article>

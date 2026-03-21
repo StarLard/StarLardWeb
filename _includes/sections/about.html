@@ -1,0 +1,28 @@
+<section id="about" class="section section--about">
+  <div class="section__content">
+    <div class="about-grid">
+      <div class="about__info">
+        <h2>About Me</h2>
+        <p>{{ page.about_text | default: "Currently building memes and dreams as an iOS Engineer at Twitch. Previously CTO at Map2Next: a mobile app that provides the fastest way to find great places to go." }}</p>
+        <p>Prior to joining Map2Next, I worked as an iOS engineer with companies across the US where I created apps which are now being used by thousands of users.</p>
+        <div class="about__links">
+          {% for link in site.author.links %}
+            {% if link.url %}
+              <a href="{{ link.url }}" class="about__link" target="_blank" rel="noopener">
+                <i class="{{ link.icon }}"></i>
+                <span>{{ link.label }}</span>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="about__contact">
+        <h3>Get in Touch</h3>
+        <p>Interested in working together or have questions?</p>
+        <a href="mailto:{{ site.author.email }}" class="btn btn--primary">
+          <i class="fas fa-envelope"></i> Send Email
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
