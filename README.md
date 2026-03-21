@@ -4,7 +4,7 @@ Source code for the [starlard.dev](https://starlard.dev) website.
 
 ## Overview
 
-StarLardWeb is a static website, built using [Jekyll](https://jekyllrb.com). The project is organized using standard Jekyll conventions and depend
+StarLardWeb is a static website, built using [Jekyll](https://jekyllrb.com) with the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) theme and custom styling. The homepage features a single-page scrolling layout with hero, portfolio, posts, and about sections. The project is organized using standard Jekyll conventions with additional custom SCSS and layouts.
 
 ## Set up
 
@@ -35,13 +35,44 @@ When required, deployment can also be done locally by running `firebase deploy -
 
 ## Contributing
 
-This site uses the Minimal Mistakes Jekyll theme. See the [documentation](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/) for detailed configuration options.
+This site uses the Minimal Mistakes Jekyll theme with custom styling. See the [theme documentation](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/) for base configuration options.
+
+### Project Structure
+
+```
+_layouts/
+  landing.html          # Single-page scrolling homepage layout
+
+_includes/
+  sections/
+    hero.html           # Hero section with avatar and CTAs
+    portfolio-grid.html # Portfolio cards grid
+    recent-posts.html   # Latest blog posts
+    about.html          # About and contact section
+  portfolio-card.html   # Reusable portfolio card component
+
+_sass/
+  _custom-variables.scss   # Dark theme colors and typography
+  _custom-sections.scss    # Full-height scrolling sections
+  _custom-cards.scss       # Portfolio and post card styles
+  _custom-navigation.scss  # Sticky nav with blur effect
+  _custom-animations.scss  # Scroll animations
+
+assets/
+  css/
+    main.scss           # Light mode styles
+    main_dark.scss      # Dark mode styles
+  js/
+    smooth-scroll.js    # Smooth scrolling and nav highlighting
+```
 
 ### Pages
 
 Create pages in the `_pages` directory and add paths for any new pages in `_data/navigation.yml`.
 
-Pages shoudld contain a [Front Matter](https://jekyllrb.com/docs/front-matter/) header like the following at the top of the file:
+The homepage (`index.md`) uses the custom `landing` layout which renders the single-page scrolling sections. Other pages use standard Minimal Mistakes layouts.
+
+Pages should contain a [Front Matter](https://jekyllrb.com/docs/front-matter/) header:
 ```
 ---
 layout: <layout>

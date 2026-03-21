@@ -1,6 +1,10 @@
 main:
-  - title: "My Apps"
-    url: /portfolio/
+  - title: "Apps"
+    url: /#portfolio
+  - title: "Experience"
+    url: /#experience
   - title: "Posts"
-    url: /posts/
+    url: /#posts
+  - title: "About"
+    url: /#about
 

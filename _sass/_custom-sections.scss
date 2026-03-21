@@ -1,0 +1,274 @@
+/* ==========================================================================
+   Section Styles for Single-Page Layout
+   ========================================================================== */
+
+.landing-page {
+  width: 100%;
+}
+
+.section {
+  min-height: 100vh;
+  padding: $section-spacing 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: $medium) {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+
+  &--hero {
+    background: linear-gradient(180deg, $background-color 0%, $background-color-alt 100%);
+    text-align: center;
+    padding-top: calc($masthead-height + 2rem);
+  }
+
+  &--portfolio {
+    background-color: $background-color-alt;
+  }
+
+  &--posts {
+    background-color: $background-color;
+  }
+
+  &--about {
+    background-color: $background-color-alt;
+  }
+}
+
+.section__header {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    color: $text-color;
+
+    @media (max-width: $medium) {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    color: $muted-text-color;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+}
+
+.section__content {
+  max-width: $content-max-width;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.section__footer {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+// Hero Section Specific Styles
+.hero {
+  max-width: 800px;
+  margin: 0 auto;
+
+  &__avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid $primary-color;
+    box-shadow: 0 0 30px rgba($primary-color, 0.3);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    color: $text-color;
+
+    @media (max-width: $medium) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+    color: $muted-text-color;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+
+    @media (max-width: $medium) {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: $muted-text-color;
+    font-size: 0.875rem;
+    animation: bounce 2s infinite;
+
+    @media (max-width: $medium) {
+      display: none;
+    }
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+// Button Styles
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: $border-radius-sm;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+
+  &--primary {
+    background: $primary-color;
+    color: white;
+
+    &:hover {
+      background: $link-color-hover;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($primary-color, 0.4);
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    color: $text-color;
+    border: 2px solid $border-color;
+
+    &:hover {
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+  }
+}
+
+// About Section Specific Styles
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+
+  @media (min-width: $medium) {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+  }
+}
+
+.about__info {
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: $text-color;
+  }
+
+  p {
+    color: $muted-text-color;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+.about__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.about__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: $card-background;
+  border-radius: $border-radius-sm;
+  color: $text-color;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid $border-color;
+
+  i {
+    color: $primary-color;
+  }
+
+  &:hover {
+    background: $card-hover-background;
+    border-color: $primary-color;
+  }
+}
+
+.about__contact {
+  background: $card-background;
+  padding: 2rem;
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: $text-color;
+  }
+
+  p {
+    color: $muted-text-color;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Animations and Transitions
+   ========================================================================== */
+
+// Smooth scroll behavior
+html {
+  scroll-behavior: smooth;
+}
+
+// Fade in on scroll
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+
+  &.is-visible {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+}
+
+// Staggered animations for grid items
+.portfolio-grid {
+  .portfolio-card {
+    &.is-visible {
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{($i - 1) * 0.1}s;
+        }
+      }
+    }
+  }
+}
+
+.posts-grid {
+  .post-card {
+    &.is-visible {
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{($i - 1) * 0.1}s;
+        }
+      }
+    }
+  }
+}
+
+// Subtle hover glow for interactive elements
+.glow-hover {
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 30px rgba($primary-color, 0.3);
+  }
+}
+
+// Link transition
+a {
+  transition: color 0.2s ease;
+}
+
+// Focus states for accessibility
+*:focus-visible {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+}
+
+// Reduced motion preference
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-on-scroll {
+    opacity: 1;
+  }
+}

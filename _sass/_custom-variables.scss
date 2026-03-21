@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Custom Variables - Dark Theme Focus
+   ========================================================================== */
+
+// Typography - Modern, clean fonts
+$global-font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !default;
+$header-font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif !default;
+$code-font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", monospace !default;
+
+// Dark Theme Color Palette
+$background-color: #0a0a0b !default;           // Near-black background
+$background-color-alt: #121214 !default;       // Slightly lighter for sections
+$text-color: #e8e8e8 !default;                 // Off-white text
+$muted-text-color: #888888 !default;           // Subdued text
+$primary-color: #6366f1 !default;              // Indigo accent
+$secondary-color: #22d3ee !default;            // Cyan accent for highlights
+$border-color: rgba(255, 255, 255, 0.1) !default;
+$card-background: #18181b !default;
+$card-hover-background: #1f1f23 !default;
+
+// Code blocks
+$code-background-color: #1a1a1d !default;
+$code-background-color-dark: #141416 !default;
+
+// Links
+$link-color: $primary-color !default;
+$link-color-hover: #818cf8 !default;           // Lighter indigo
+
+// Spacing
+$section-spacing: 6rem !default;
+$content-max-width: 1200px !default;
+
+// Shadows for cards
+$card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2) !default;
+$card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2) !default;
+
+// Border radius - more modern/rounded
+$border-radius: 12px !default;
+$border-radius-sm: 8px !default;
+
+// Breakpoints (matching MM)
+$small: 600px !default;
+$medium: 768px !default;
+$medium-wide: 900px !default;
+$large: 1024px !default;
+$x-large: 1280px !default;
+
+// Navigation
+$masthead-height: 70px !default;

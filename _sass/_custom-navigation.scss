@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Enhanced Navigation - Sticky with Blur
+   ========================================================================== */
+
+.masthead {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba($background-color, 0.8) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid $border-color !important;
+  transition: all 0.3s ease;
+
+  &--scrolled {
+    background: rgba($background-color, 0.95) !important;
+  }
+}
+
+.masthead__inner-wrap {
+  max-width: $content-max-width;
+  padding: 0 2rem;
+}
+
+.greedy-nav {
+  background: transparent !important;
+
+  a.site-title {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: $text-color !important;
+  }
+
+  .visible-links {
+    a {
+      position: relative;
+      color: $muted-text-color !important;
+      transition: color 0.2s ease;
+
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: $primary-color;
+        transition: all 0.2s ease;
+        transform: translateX(-50%);
+      }
+
+      &:hover {
+        color: $text-color !important;
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &.active {
+        color: $text-color !important;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .hidden-links {
+    background: $card-background !important;
+    border: 1px solid $border-color !important;
+    border-radius: $border-radius-sm;
+
+    a {
+      color: $text-color !important;
+
+      &:hover {
+        color: $primary-color !important;
+        background: $card-hover-background !important;
+      }
+    }
+  }
+
+  button {
+    color: $text-color !important;
+
+    &::before {
+      color: $text-color !important;
+    }
+  }
+}
+
+// Add padding to body to account for fixed nav
+body {
+  padding-top: $masthead-height;
+}
+
+// Initial page areas (like home layout)
+.initial-content {
+  // Reset any conflicting styles from MM
+}
+
+// Page wrapper adjustments
+.page {
+  // Ensure content isn't hidden behind nav
+}
