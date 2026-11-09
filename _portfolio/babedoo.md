@@ -2,6 +2,7 @@
 title: "Babedoo"
 date:   2025-03-18 23:34:45 -0800
 excerpt: "Ad-free pregnancy tracker"
+link: https://babedoo.starlard.dev
 header:
   image: /assets/images/babedoo-hero.png
   teaser: /assets/images/babedoo-thumbnail.png

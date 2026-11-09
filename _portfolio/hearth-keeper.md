@@ -2,6 +2,7 @@
 title: "Hearth Keeper"
 date:   2025-03-18 22:34:45 -0800
 excerpt: "Game tracker for Hearthstone"
+link: https://hearthkeeper.starlard.dev
 header:
   image: /assets/images/hearth-keeper-hero.png
   teaser: /assets/images/hearth-keeper-thumbnail.png

@@ -2,6 +2,7 @@
 title: "Mimeer"
 date:   2025-03-18 23:35:45 -0800
 excerpt: "Minimalist activity log"
+link: https://mimeer.starlard.dev
 header:
   image: /assets/images/mimeer-hero.png
   teaser: /assets/images/mimeer-thumbnail.png
