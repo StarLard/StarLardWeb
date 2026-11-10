@@ -23,6 +23,9 @@ bundle exec jekyll serve
 # Build site (generates _site directory)
 bundle exec jekyll build
 
+# Build, check every page, and run the site tests (same as CI)
+bundle exec rake test
+
 # Serve with Firebase emulator (requires build first)
 firebase emulators:start --only hosting:starlarddev
 ```
@@ -41,6 +44,7 @@ firebase deploy --only hosting --project dev-starlard-lard-lad
 - **Posts**: `_posts/`, `post` layout by default, served at `/posts/:title/`. The Posts index is `_pages/posts.md`.
 - **Redirects**: old `/portfolio/*` app pages and tag, category and year archives redirect in `firebase.json`.
 - **Assets**: Images in `assets/images/`; one stylesheet `assets/css/main.scss`; `assets/js/theme.js` for the theme picker and code copy buttons.
+- **Tests**: `Rakefile` (html-proofer over `_site`) and `test/site_test.rb` (Minitest). Run `bundle exec rake test` after changing templates, data, posts or redirects; CI runs it before deploying. When you add a redirect to `firebase.json` or an app to `_data/apps.yml`, add its expectation to `test/site_test.rb`.
 - **Build output**: `_site/` directory (deployed to Firebase)
 
 ## Content Conventions

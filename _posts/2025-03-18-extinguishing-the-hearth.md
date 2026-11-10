@@ -1,6 +1,6 @@
 ---
 title:  "Extinguishing the Hearth"
-date:   2025-03-18 23:34:45 -0800
+date:   2025-03-18 23:34:45 -0700
 description: "The story of launching Hearth Keeper, my first indie app, and what I'd do differently."
 categories: iOS
 tags: ios blizzard gaming

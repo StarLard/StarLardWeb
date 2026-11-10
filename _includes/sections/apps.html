@@ -12,17 +12,17 @@
         <div class="sl-card__head">
           <img class="sl-card__icon" src="{{ featured.icon | relative_url }}" alt="" width="88" height="88">
           <div class="sl-card__titles">
-            {%- if featured.tag %}<span class="sl-tag">{% include star.html %}{{ featured.tag }}</span>{% endif %}
-            <h3 class="sl-card__title"><a href="{{ featured.url }}">{{ featured.name }}</a></h3>
+            {%- if featured.tag %}<span class="sl-tag">{% include star.html %}{{ featured.tag | escape }}</span>{% endif %}
+            <h3 class="sl-card__title"><a href="{{ featured.url }}">{{ featured.name | escape }}</a></h3>
           </div>
         </div>
-        <p class="sl-card__body">{{ featured.pitch }}</p>
-        <p class="sl-card__meta">{{ featured.platforms }}</p>
+        <p class="sl-card__body">{{ featured.pitch | escape }}</p>
+        <p class="sl-card__meta">{{ featured.platforms | escape }}</p>
         <div><a class="sl-button sl-button--primary sl-button--small" href="{{ featured.url }}">{{ featured.action | default: "Visit site" }}</a></div>
       </div>
       {%- if featured.image %}
       <div class="sl-card__art">
-        <img src="{{ featured.image | relative_url }}" alt="{{ featured.image_alt }}" loading="lazy">
+        <img src="{{ featured.image | relative_url }}" alt="{{ featured.image_alt | escape }}" loading="lazy">
       </div>
       {%- endif %}
     </article>
@@ -34,10 +34,10 @@
       <article class="sl-card">
         <div class="sl-card__head">
           <img class="sl-card__icon" src="{{ app.icon | relative_url }}" alt="" width="64" height="64" loading="lazy">
-          <h3 class="sl-card__title"><a href="{{ app.url }}">{{ app.name }}</a></h3>
+          <h3 class="sl-card__title"><a href="{{ app.url }}">{{ app.name | escape }}</a></h3>
         </div>
-        <p class="sl-card__body">{{ app.pitch }}</p>
-        <p class="sl-card__meta">{{ app.platforms }} · <a href="{{ app.url }}">Visit site →</a></p>
+        <p class="sl-card__body">{{ app.pitch | escape }}</p>
+        <p class="sl-card__meta">{{ app.platforms | escape }} · <a href="{{ app.url }}">Visit site →</a></p>
       </article>
       {%- endunless %}
       {%- endfor %}

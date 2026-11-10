@@ -65,6 +65,8 @@ exclude:
   - .jekyll-cache
   - Gemfile
   - Gemfile.lock
+  - Rakefile
+  - test
   - README.md
   - CLAUDE.md
   - firebase.json

@@ -25,6 +25,15 @@ If you have the [Firebase CLI](https://firebase.google.com/docs/cli#install_the_
 2. Serve the site with `firebase emulators:start --only hosting:starlarddev`
 2. Visit the site locally at 127.0.0.1:5002 (or whatever address is printed in the console)
 
+## Test
+
+Run `bundle exec rake test`. It builds the site, then:
+
+1. Checks every built page with [html-proofer](https://github.com/gjtorikian/html-proofer) for broken internal links and `#anchors`, missing images or `alt` text, and malformed HTML. External links aren't checked, since sites like the App Store often block automated requests.
+2. Runs `test/site_test.rb`, which checks what html-proofer can't see: every app in `_data/apps.yml` is complete and on the home page with exactly one featured, every nav link has a section, the theme picker and theme script are in place, every post has a description and is built at its URL and listed on `/posts/`, the feed and sitemap are complete, and the redirects in `firebase.json` send old URLs where they should.
+
+`bundle exec rake proof` and `bundle exec rake site_tests` run each half on its own. CI runs `rake test` on every pull request and before every deploy, so a failing test blocks the deploy.
+
 ## Deploy
 
 Deployment is managed automatically upon merging to main via GitHub actions.
@@ -70,6 +79,10 @@ _sass/
 assets/
   css/main.scss         # Compiles the partials above
   js/theme.js           # Wires the theme picker and code copy buttons
+
+Rakefile                # build, proof and test tasks
+test/
+  site_test.rb          # Content, redirect, feed and sitemap tests
 ```
 
 ### Themes
