@@ -19,6 +19,8 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  // Break a word only when it can't fit on a line by itself (long API names in post titles).
+  overflow-wrap: break-word;
 }
 
 img {
@@ -30,6 +32,7 @@ h1,
 h2,
 h3 {
   text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 a {
