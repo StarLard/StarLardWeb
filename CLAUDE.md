@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-StarLardWeb is a static portfolio website built with Jekyll using the Minimal Mistakes theme. It showcases iOS development projects and blog posts. Hosted on Firebase Hosting with automatic deployment via GitHub Actions.
+StarLardWeb is a static portfolio website built with Jekyll and its own small theme (no third-party theme). It showcases iOS apps and blog posts. Hosted on Firebase Hosting with automatic deployment via GitHub Actions.
 
 ## Common Commands
 
@@ -23,6 +23,9 @@ bundle exec jekyll serve
 # Build site (generates _site directory)
 bundle exec jekyll build
 
+# Build, check every page, and run the site tests (same as CI)
+bundle exec rake test
+
 # Serve with Firebase emulator (requires build first)
 firebase emulators:start --only hosting:starlarddev
 ```
@@ -35,10 +38,13 @@ firebase deploy --only hosting --project dev-starlard-lard-lad
 
 ## Architecture
 
-- **Theme**: Minimal Mistakes Jekyll theme with dark skin variant
-- **Collections**: Posts (`_posts/`) and Portfolio items (`_portfolio/`)
-- **Pages**: Static pages in `_pages/`, navigation configured in `_data/navigation.yml`
-- **Assets**: Images in `assets/images/`, CSS in `assets/css/`
+- **Theme**: Custom, in `_layouts`, `_includes` and `_sass`. Styles follow the Star Lard design system: red, white and black with yellow only as an accent; square boards with a 3px outline and hard offset shadows; Yellowtail script, Bowlby One labels, Figtree body text.
+- **Themes**: Light and Dark via CSS custom properties in `_sass/_tokens.scss`, switched by `data-theme` on `<html>`. The inline script in `_includes/head.html` applies the visitor's choice (Auto, Light or Dark from the footer picker) before the page draws. Always style with tokens, never fixed colors.
+- **Home page**: `index.md` (copy) with the `home` layout, which includes `_includes/sections/*`. App and experience content lives in `_data/apps.yml` and `_data/experience.yml`.
+- **Posts**: `_posts/`, `post` layout by default, served at `/posts/:title/`. The Posts index is `_pages/posts.md`.
+- **Redirects**: old `/portfolio/*` app pages and tag, category and year archives redirect in `firebase.json`.
+- **Assets**: Images in `assets/images/`; one stylesheet `assets/css/main.scss`; `assets/js/theme.js` for the theme picker and code copy buttons.
+- **Tests**: `Rakefile` (html-proofer over `_site`) and `test/site_test.rb` (Minitest). Run `bundle exec rake test` after changing templates, data, posts or redirects; CI runs it before deploying. When you add a redirect to `firebase.json` or an app to `_data/apps.yml`, add its expectation to `test/site_test.rb`.
 - **Build output**: `_site/` directory (deployed to Firebase)
 
 ## Content Conventions
@@ -46,14 +52,14 @@ firebase deploy --only hosting --project dev-starlard-lard-lad
 ### Posts
 - Location: `_posts/`
 - Naming: `YEAR-MONTH-DAY-title.md`
-- Required front matter: `layout`, `title`, `date`, `categories`, `tags`
+- Front matter: `title`, `date`, `description` (one sentence, used on cards and in SEO), `categories`, `tags`
 
-### Portfolio Items
-- Location: `_portfolio/`
-- Front matter includes: `title`, `date`, `excerpt`, `header.image`, `sidebar`, `gallery`
+### Apps
+- Location: `_data/apps.yml`
+- Fields: `name`, `url`, `icon`, `platforms`, `pitch`; one app may be `featured: true` with `image`, `image_alt`, `action` and an optional `tag`
 
 ### Code Snippets in Posts
-Use Jekyll's highlight tag:
+Use Jekyll's highlight tag or fenced code blocks:
 ```
 {% highlight swift %}
 print("Hello World!")
@@ -64,4 +70,3 @@ print("Hello World!")
 
 - `_config.yml`: Main Jekyll configuration (requires server restart on changes)
 - `firebase.json`: Firebase hosting configuration (public directory: `_site`)
-- Theme documentation: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/

@@ -1,0 +1,21 @@
+# The Experience section of the home page, newest first.
+
+- years: "2026 – now"
+  title: "Airbnb · Senior iOS Engineer"
+  summary: "Building the Airbnb iOS app."
+
+- years: "2019 – 2026"
+  title: "Twitch · Senior Software Engineer"
+  summary: "Lead engineer for video on iOS. Shared playback architecture across Android and iOS, SharePlay at launch (featured at WWDC), Channel Points, Drops and Polls."
+
+- years: "2018 – 2019"
+  title: "Map2Next · Co-Founder & CTO"
+  summary: "Led platform choices and a real-time architecture for the fastest way to find great places to go."
+
+- years: "2016 – 2018"
+  title: "Freelance · Software Engineer"
+  summary: "iOS and macOS apps for clients in Austin and New York: healthcare paging, kids' audiobooks, Mac admin tools."
+
+- years: "B.S."
+  title: "University of Oregon"
+  summary: "Computer and Information Science."

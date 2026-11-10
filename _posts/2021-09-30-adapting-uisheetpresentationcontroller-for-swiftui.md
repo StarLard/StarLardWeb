@@ -1,7 +1,7 @@
 ---
-layout: single
 title:  "Adapting UISheetPresentationController for SwiftUI"
 date:   2021-09-30 16:05:45 -0800
+description: "Bringing iOS 15's resizable sheets to SwiftUI."
 categories: iOS
 tags: swift swiftui uikit ios apple
 ---

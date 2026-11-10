@@ -1,0 +1,31 @@
+# The Apps section of the home page. The first app marked `featured` gets the full-width card;
+# the rest show three per row in this order.
+
+- name: "Hearth Keeper"
+  url: "https://hearthkeeper.starlard.dev"
+  icon: "/assets/images/hearth-keeper-icon-cropped.png"
+  platforms: "iOS · iPadOS"
+  featured: true
+  tag: "Updated"
+  pitch: "A game tracker for Hearthstone, with a big new update. Track your stats, manage and edit your decks, log matches in seconds, and keep an eye on it all with widgets."
+  action: "See what's new"
+  image: "/assets/images/hearth-keeper-feature.jpg"
+  image_alt: "Hearth Keeper on iPad and iPhone, showing the Stats screen"
+
+- name: "Scooba"
+  url: "https://scooba.starlard.dev"
+  icon: "/assets/images/scooba-icon-cropped.png"
+  platforms: "iOS · Coming soon"
+  pitch: "The dive log for divers, by divers. Log every dive and keep it safe in iCloud."
+
+- name: "Mimeer"
+  url: "https://mimeer.starlard.dev"
+  icon: "/assets/images/mimeer-icon-cropped.png"
+  platforms: "iOS · macOS"
+  pitch: "A minimalist activity log. Track when you last did anything, right from your home screen."
+
+- name: "Babedoo"
+  url: "https://babedoo.starlard.dev"
+  icon: "/assets/images/babedoo-icon-cropped.png"
+  platforms: "iOS"
+  pitch: "An ad-free pregnancy tracker. See how far along you are with lock and home screen widgets."

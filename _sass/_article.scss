@@ -1,0 +1,199 @@
+// Reading pages: posts, the Posts index and the 404 page.
+
+.sl-page {
+  padding-block: 72px var(--space-22);
+}
+
+.sl-article {
+  max-width: var(--text-width);
+  margin: 0 auto;
+}
+
+.sl-article__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+}
+
+.sl-article__title {
+  margin: 0;
+  font-size: 44px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.sl-article__back {
+  font-family: var(--font-poster);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.sl-prose {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.sl-prose > * + * {
+  margin-top: 1.1em;
+}
+
+.sl-prose > * {
+  margin-bottom: 0;
+}
+
+.sl-prose h1,
+.sl-prose h2,
+.sl-prose h3 {
+  margin-top: 2em;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.sl-prose h1 {
+  font-size: 30px;
+}
+
+.sl-prose h2 {
+  font-size: 26px;
+}
+
+.sl-prose h3 {
+  font-size: 21px;
+}
+
+.sl-prose a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.sl-prose a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.sl-prose ul,
+.sl-prose ol {
+  padding-left: 1.4em;
+}
+
+.sl-prose li + li {
+  margin-top: 0.4em;
+}
+
+.sl-prose blockquote {
+  margin-inline: 0;
+  padding-left: var(--space-6);
+  border-left: var(--stroke) solid var(--red-text);
+  color: var(--fg-muted);
+}
+
+.sl-prose img {
+  display: block;
+  border: var(--stroke) solid var(--edge);
+  box-shadow: var(--shadow-sign);
+}
+
+.sl-prose .align-center {
+  margin-inline: auto;
+}
+
+.sl-prose code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+}
+
+.sl-prose :not(pre) > code {
+  padding: 0.1em 0.35em;
+  background: var(--hairline);
+}
+
+.sl-prose hr {
+  border: 0;
+  border-top: var(--stroke) solid var(--edge);
+}
+
+.sl-prose .gist {
+  font-size: 14px;
+}
+
+.sl-prose .gist .gist-file {
+  border: var(--stroke) solid var(--edge) !important;
+  border-radius: 0 !important;
+}
+
+// Code blocks and the copy button.
+.sl-prose div.highlighter-rouge,
+.sl-prose figure.highlight {
+  position: relative;
+  margin-inline: 0;
+}
+
+.sl-prose pre {
+  margin: 0;
+  padding: var(--space-4) var(--space-6);
+  overflow-x: auto;
+  background: var(--code-bg);
+  border: var(--stroke) solid var(--edge);
+  box-shadow: var(--shadow-press);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.sl-copy {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  padding: 4px 10px;
+  background: var(--surface);
+  color: var(--fg);
+  border: 2px solid var(--edge);
+  font-family: var(--font-poster);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+// The Posts index and 404 page.
+.sl-page__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-bottom: 44px;
+}
+
+.sl-notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+  max-width: 560px;
+}
+
+.sl-notfound img {
+  width: 112px;
+  height: 112px;
+}
+
+.sl-notfound p {
+  margin: 0;
+  font-size: 19px;
+}
+
+@media (max-width: 520px) {
+  .sl-page {
+    padding-block: var(--space-12) var(--space-16);
+  }
+
+  .sl-article__title {
+    font-size: 34px;
+  }
+
+  .sl-prose {
+    font-size: 17px;
+  }
+}

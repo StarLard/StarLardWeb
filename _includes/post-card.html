@@ -1,0 +1,5 @@
+<a class="sl-board sl-post-card" href="{{ include.post.url | relative_url }}">
+  <span class="sl-post-card__date">{{ include.post.date | date: "%b %-d, %Y" }}</span>
+  <span class="sl-post-card__title">{{ include.post.title }}</span>
+  <span class="sl-post-card__summary">{{ include.post.description | default: include.post.excerpt | strip_html | truncate: 140 }}</span>
+</a>

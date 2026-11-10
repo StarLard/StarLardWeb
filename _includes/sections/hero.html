@@ -1,19 +1,16 @@
-<section id="hero" class="section section--hero">
-  <div class="section__content">
-    <div class="hero">
-      <div class="hero__avatar">
-        <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}">
-      </div>
-      <h1 class="hero__title">{{ page.hero_title | default: "Hi, I'm Caleb" }}</h1>
-      <p class="hero__subtitle">{{ page.hero_subtitle | default: site.author.bio }}</p>
-      <div class="hero__cta">
-        <a href="#portfolio" class="btn btn--primary">View My Work</a>
-        <a href="#about" class="btn btn--outline">Get in Touch</a>
+<section id="top" class="sl-hero">
+  <div class="sl-wrap sl-hero__grid">
+    <div class="sl-hero__text">
+      <p class="sl-eyebrow">{% include star.html edge=true %} {{ page.eyebrow }}</p>
+      <h1 class="sl-hero__title">{{ page.hero_title }}</h1>
+      <p class="sl-hero__intro">{{ page.hero_intro }}</p>
+      <div class="sl-actions">
+        <a class="sl-button sl-button--primary" href="#apps">View my work</a>
+        <a class="sl-button sl-button--secondary" href="#about">Get in touch</a>
       </div>
     </div>
-  </div>
-  <div class="hero__scroll-indicator">
-    <span>Scroll</span>
-    <i class="fas fa-chevron-down"></i>
+    <div class="sl-keyart sl-hero__art">
+      <img src="{{ '/assets/images/star-lard-logo-transparent.png' | relative_url }}" alt="Star Lard logo" width="512" height="512">
+    </div>
   </div>
 </section>

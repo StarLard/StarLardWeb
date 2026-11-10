@@ -15,7 +15,8 @@ jobs:
       - uses: actions/checkout@v7
       - uses: ruby/setup-ruby@v1
       - run: bundle install
-      - run: bundle exec jekyll build
+      # Builds the site, checks every page for broken links and images, and runs test/site_test.rb.
+      - run: bundle exec rake test
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,13 @@
+<header class="sl-header">
+  <nav class="sl-wrap sl-header__inner" aria-label="Main">
+    <a class="sl-brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/images/star-lard-logo-transparent.png' | relative_url }}" alt="" width="56" height="56">
+      <span class="sl-wordmark">Star Lard</span>
+    </a>
+    <ul class="sl-nav">
+      {%- for link in site.data.navigation.main %}
+      <li><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
+      {%- endfor %}
+    </ul>
+  </nav>
+</header>

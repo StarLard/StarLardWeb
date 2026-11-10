@@ -1,0 +1,55 @@
+// Rouge syntax colors, kept to the brand: red keywords, warm strings, muted comments.
+
+.highlight {
+  color: var(--fg);
+}
+
+.highlight .c,
+.highlight .c1,
+.highlight .cm,
+.highlight .cs,
+.highlight .cd {
+  color: var(--fg-muted);
+  font-style: italic;
+}
+
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt,
+.highlight .kc,
+.highlight .ow {
+  color: var(--red-text);
+  font-weight: 600;
+}
+
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .sb,
+.highlight .sc,
+.highlight .se,
+.highlight .si,
+.highlight .sx,
+.highlight .m,
+.highlight .mi,
+.highlight .mf,
+.highlight .mh {
+  color: var(--code-string);
+}
+
+.highlight .nc,
+.highlight .nf,
+.highlight .nb,
+.highlight .bp,
+.highlight .na,
+.highlight .nd {
+  color: var(--code-name);
+}
+
+.highlight .err {
+  color: inherit;
+  background: none;
+}
