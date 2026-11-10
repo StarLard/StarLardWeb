@@ -109,6 +109,12 @@ class HomePageTest < Minitest::Test
     assert theme_script < stylesheet, "The theme script should run before the stylesheet loads"
   end
 
+  # Browsers keep CSS and JS for an hour, so each build needs new URLs or visitors see old styles.
+  def test_stylesheet_and_script_urls_change_every_build
+    assert_match %r{href="/assets/css/main\.css\?v=\d+"}, @home, "main.css needs a ?v= build version"
+    assert_match %r{src="/assets/js/theme\.js\?v=\d+"}, @home, "theme.js needs a ?v= build version"
+  end
+
   def test_has_the_theme_picker
     %w[auto light dark].each do |value|
       assert_contains @home, %(name="theme" value="#{value}"), "The theme picker is missing #{value}"
@@ -213,6 +219,20 @@ class RedirectsTest < Minitest::Test
   def test_redirects_are_permanent
     REDIRECTS.each do |redirect|
       assert_equal 301, redirect["type"], "#{redirect["regex"] || redirect["source"]} should be a 301"
+    end
+  end
+
+  # Pages must revalidate on every visit so they pick up each deploy's new stylesheet URL.
+  def test_pages_are_not_cached
+    headers = JSON.parse(File.read(File.join(ROOT, "firebase.json")))["hosting"]["headers"]
+    no_cache = headers.find { |rule| rule["headers"].any? { |h| h["key"] == "Cache-Control" && h["value"] == "no-cache" } }
+    refute_nil no_cache, "firebase.json should mark pages no-cache"
+    pattern = Regexp.new(no_cache["regex"])
+    %w[/ /posts/ /posts/extinguishing-the-hearth/ /404.html].each do |path|
+      assert_match pattern, path, "#{path} would be cached"
+    end
+    %w[/assets/css/main.css /assets/js/theme.js /assets/images/star-lard-logo.png].each do |path|
+      refute_match pattern, path, "#{path} shouldn't be marked no-cache"
     end
   end
 
