@@ -1,7 +1,7 @@
 ---
-layout: single
 title:  "Authenticating Users with Blizzard on iOS"
 date:   2021-09-30 16:05:45 -0800
+description: "Battle.net sign-in for your iOS app, without asking users for personal info."
 categories: iOS
 tags: swift ios blizzard security privacy gaming apple
 ---

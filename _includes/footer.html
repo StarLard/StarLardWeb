@@ -1,0 +1,23 @@
+<footer class="sl-footer">
+  <div class="sl-wrap sl-footer__inner">
+    <a class="sl-brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/images/star-lard-tub.png' | relative_url }}" alt="" width="40" height="40">
+      <span class="sl-wordmark">Star Lard</span>
+    </a>
+    <div class="sl-theme" hidden>
+      <span class="sl-theme__label" id="theme-label">Appearance</span>
+      <fieldset class="sl-theme__switcher" role="radiogroup" aria-labelledby="theme-label">
+        <legend class="sl-visually-hidden">Appearance</legend>
+        <label><input type="radio" name="theme" value="auto"><span>Auto</span></label>
+        <label><input type="radio" name="theme" value="light"><span>Light</span></label>
+        <label><input type="radio" name="theme" value="dark"><span>Dark</span></label>
+      </fieldset>
+    </div>
+    <div class="sl-footer__links">
+      <a href="{{ site.links.github }}">GitHub</a>
+      <a href="{{ site.links.linkedin }}">LinkedIn</a>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <span>© {{ site.time | date: '%Y' }} {{ site.author.name }}</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,88 @@
+// Star Lard design tokens, from the Star Lard design system (tokens.json).
+// Light values live on :root; Dark values apply when <html data-theme="dark">, which the
+// head script sets from the visitor's choice (Auto follows the system). Without JavaScript,
+// the media query below follows the system instead.
+
+@mixin dark-tokens {
+  --red-text: #ff6b5f;
+  --bg: #16171a;
+  --surface: #212226;
+  --fg: #fffadf;
+  --fg-muted: #b9b4a4;
+  --hairline: #34353b;
+  --edge: #fffadf;
+  --band: #9e1b15;
+  --focus: #fffadf;
+  --code-bg: #111214;
+  --code-string: #e9c46a;
+  --code-name: #8cc4ff;
+  color-scheme: dark;
+}
+
+:root {
+  // Brand colors (same in both themes)
+  --star-yellow: #fdd400;
+  --sign-red: #f3352f;
+  --red-fill: #c4201a;
+  --ink: #000000;
+  --lard-cream: #fffadf;
+  --sign-white: #ffffff;
+  --on-red: #ffffff;
+  --on-yellow: #000000;
+
+  // Theme colors (Light)
+  --red-text: #c4201a;
+  --bg: #fffadf;
+  --surface: #ffffff;
+  --fg: #1b1914;
+  --fg-muted: #5c564a;
+  --hairline: #ece6d2;
+  --edge: #000000;
+  --band: #c4201a;
+  --focus: #000000;
+  --code-bg: #fffdf3;
+  --code-string: #7a4b00;
+  --code-name: #1f5a96;
+
+  // Type
+  --font-script: Yellowtail, "Brush Script MT", cursive;
+  --font-poster: "Bowlby One", "Arial Black", Impact, sans-serif;
+  --font-sans: Figtree, "Avenir Next", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  // Spacing
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-22: 88px;
+
+  // Shape
+  --radius-sign: 0;
+  --radius-soft: 20px;
+  --radius-pill: 999px;
+  --stroke: 3px;
+  --stroke-heavy: 4px;
+  --shadow-sign: 6px 6px 0 #000000;
+  --shadow-press: 3px 3px 0 #000000;
+  --shadow-keyart: 8px 8px 0 #fdd400, 12px 12px 0 #000000;
+
+  --content-width: 1100px;
+  --text-width: 68ch;
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  @include dark-tokens;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @include dark-tokens;
+  }
+}

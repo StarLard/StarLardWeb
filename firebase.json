@@ -7,6 +7,38 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "regex": "^/portfolio/babedoo(/.*)?$",
+        "destination": "https://babedoo.starlard.dev",
+        "type": 301
+      },
+      {
+        "regex": "^/portfolio/hearth-keeper(/.*)?$",
+        "destination": "https://hearthkeeper.starlard.dev",
+        "type": 301
+      },
+      {
+        "regex": "^/portfolio/mimeer(/.*)?$",
+        "destination": "https://mimeer.starlard.dev",
+        "type": 301
+      },
+      {
+        "regex": "^/portfolio/scooba(/.*)?$",
+        "destination": "https://scooba.starlard.dev",
+        "type": 301
+      },
+      {
+        "regex": "^/portfolio/?$",
+        "destination": "/#apps",
+        "type": 301
+      },
+      {
+        "regex": "^/(tags|categories|years)(/.*)?$",
+        "destination": "/posts/",
+        "type": 301
+      }
+    ],
     "headers": [
       {
         "source": "**/*.@(html)",

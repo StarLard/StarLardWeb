@@ -1,0 +1,14 @@
+<section id="posts" class="sl-section sl-section--band">
+  <div class="sl-wrap sl-stack">
+    <div class="sl-section__head">
+      <div class="sl-sign"><h2 class="sl-sign__text">Latest Posts</h2></div>
+      <p class="sl-sign__sub">Notes on iOS development and launching indie apps.</p>
+    </div>
+    <div class="sl-posts">
+      {%- for post in site.posts limit: 3 %}
+      {% include post-card.html post=post %}
+      {%- endfor %}
+    </div>
+    <div><a class="sl-button sl-button--secondary" href="{{ '/posts/' | relative_url }}">All posts</a></div>
+  </div>
+</section>

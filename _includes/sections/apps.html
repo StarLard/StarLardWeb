@@ -1,0 +1,46 @@
+{%- assign featured = site.data.apps | where: "featured", true | first -%}
+<section id="apps" class="sl-section sl-section--surface">
+  <div class="sl-wrap sl-stack">
+    <div class="sl-section__head">
+      <div class="sl-sign"><h2 class="sl-sign__text">My Apps</h2></div>
+      <p class="sl-sign__sub">A collection of iOS apps, made with care.</p>
+    </div>
+
+    {%- if featured %}
+    <article class="sl-card sl-card--feature">
+      <div class="sl-card__text">
+        <div class="sl-card__head">
+          <img class="sl-card__icon" src="{{ featured.icon | relative_url }}" alt="" width="88" height="88">
+          <div class="sl-card__titles">
+            {%- if featured.tag %}<span class="sl-tag">{% include star.html %}{{ featured.tag }}</span>{% endif %}
+            <h3 class="sl-card__title"><a href="{{ featured.url }}">{{ featured.name }}</a></h3>
+          </div>
+        </div>
+        <p class="sl-card__body">{{ featured.pitch }}</p>
+        <p class="sl-card__meta">{{ featured.platforms }}</p>
+        <div><a class="sl-button sl-button--primary sl-button--small" href="{{ featured.url }}">{{ featured.action | default: "Visit site" }}</a></div>
+      </div>
+      {%- if featured.image %}
+      <div class="sl-card__art">
+        <img src="{{ featured.image | relative_url }}" alt="{{ featured.image_alt }}" loading="lazy">
+      </div>
+      {%- endif %}
+    </article>
+    {%- endif %}
+
+    <div class="sl-apps">
+      {%- for app in site.data.apps %}
+      {%- unless app.featured %}
+      <article class="sl-card">
+        <div class="sl-card__head">
+          <img class="sl-card__icon" src="{{ app.icon | relative_url }}" alt="" width="64" height="64" loading="lazy">
+          <h3 class="sl-card__title"><a href="{{ app.url }}">{{ app.name }}</a></h3>
+        </div>
+        <p class="sl-card__body">{{ app.pitch }}</p>
+        <p class="sl-card__meta">{{ app.platforms }} · <a href="{{ app.url }}">Visit site →</a></p>
+      </article>
+      {%- endunless %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
