@@ -19,7 +19,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  // Break a word only when it can't fit on a line by itself (long API names in post titles).
+  // Break a word only when its box can't grow to fit it, such as a long API name on a phone.
   overflow-wrap: break-word;
 }
 
@@ -32,7 +32,6 @@ h1,
 h2,
 h3 {
   text-wrap: balance;
-  overflow-wrap: anywhere;
 }
 
 a {
